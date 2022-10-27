@@ -13,6 +13,11 @@ class hash_tabla:
     #Me baso en la función de Bernstein, el numero 33 lo conocemos como el número mágico
     def funcion_hash(self, caracter):
         return ord(caracter) * 33 % self.tamaño_tab
+    
+    def Insertar_elementos(self, valor):
+        hash = self.function_hash(valor)
+        if self.tabla[hash] is None:
+            self.tabla[hash] = valor
 
 
         
