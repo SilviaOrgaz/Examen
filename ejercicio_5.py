@@ -6,5 +6,10 @@ class hash_tabla:
 
     def imprime_tabla(self):
         for i in range (len(self.tabla)):
-            
+            print("{}: {}".format(i, self.tabla[i]))
+    
+    def funcion_hash(self, caracter):
+        return ord(caracter) * 33 % self.tamaño_tab
+
+
         
