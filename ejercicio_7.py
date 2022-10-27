@@ -24,5 +24,10 @@ class Polinomio(object):
             self.termino_mayor = aux
             self.grado = termino
         else:
-            
+            actual = self.termino_mayor
+            while(actual.sig is not None and termino < actual.sig.info.termino):
+                actual = actual.sig
+            aux.sig = actual.sig
+            actual.sig = aux
+
     
