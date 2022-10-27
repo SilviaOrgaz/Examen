@@ -16,7 +16,7 @@ class hash_tabla:
 
     #Este es un método para insertar elementos
     def Insertar_elementos(self, valor):
-        hash = self.function_hash(valor)
+        hash = self.funcion_hash(valor)
         if self.tabla[hash] is None:
             self.tabla[hash] = valor
     
@@ -30,7 +30,7 @@ class hash_tabla:
     def des_encriptar(self, cadena):
         resultado = ""
         for i in cadena:
-            resultado = resultado + str(self.tabla[ord(i)])
+            resultado = resultado + str(self.tabla[ord(i)-33])
         return resultado
     
     
@@ -40,6 +40,8 @@ A= hash_tabla(len(alfabeto))
 cadena = input("Introduce una cadena: ")
 cadena_encriptada = A.encriptar(cadena)
 print("Cadena encriptada: {}".format(cadena_encriptada))
+cadena_des_encriptada = A.des_encriptar(cadena_encriptada)
+print("Cadena desencriptado: {}".format(cadena_des_encriptada))
 
 
 
