@@ -14,4 +14,8 @@ class Alumno:
 
 A = Alumno("Silvia", 4)
 B = Alumno("Cristina", 9)
+print(A)
+print(B)
+A.calificacion()
+B.calificacion()
 
