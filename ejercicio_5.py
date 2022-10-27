@@ -8,6 +8,9 @@ class hash_tabla:
         for i in range (len(self.tabla)):
             print("{}: {}".format(i, self.tabla[i]))
     
+    #Calcula al funcion de una cadena.
+    #Asigno un vaor de la tabla hash a cada caracter.
+    #Me baso en la función de Bernstein, el numero 33 lo conocemos como el número mágico
     def funcion_hash(self, caracter):
         return ord(caracter) * 33 % self.tamaño_tab
 
