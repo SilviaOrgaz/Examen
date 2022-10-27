@@ -42,5 +42,22 @@ class Polinomio(object):
                     return
                 aux = aux.sig
 
+#Obtiene el valor del monomio
+def obtener_valor(self, termino):
+    aux = self.termino_mayor
+    while(aux is not None and aux.info.termino > termino):
+        aux=aux.sig
+    if(aux is not None and aux.info.termino == termino):
+        return aux.info.valor
+    else:
+        return 0
+#Pinta polinomio
+def imprime(self):
+    actual = self.termino_mayor
+    while(actual is not None):
+        print("{}X{}".format(actual.info.valor, actual.info.termino))
+        actual = actual.sig
 
+def restar(self, polinomio2):
+    aux = Polinomio
     
