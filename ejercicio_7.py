@@ -1,5 +1,3 @@
-from matplotlib.rcsetup import validate_int_or_None
-
 
 class Nodo(object):
     info, sig = None, None
@@ -43,29 +41,29 @@ class Polinomio(object):
                 aux = aux.sig
 
 #Obtiene el valor del monomio
-def obtener_valor(self, termino):
-    aux = self.termino_mayor
-    while(aux is not None and aux.info.termino > termino):
-        aux=aux.sig
-    if(aux is not None and aux.info.termino == termino):
-        return aux.info.valor
-    else:
-        return 0
+    def obtener_valor(self, termino):
+        aux = self.termino_mayor
+        while(aux is not None and aux.info.termino > termino):
+            aux=aux.sig
+        if(aux is not None and aux.info.termino == termino):
+            return aux.info.valor
+        else:
+            return 0
 #Pinta polinomio
-def imprime(self):
-    actual = self.termino_mayor
-    while(actual is not None):
-        print("{}X{}".format(actual.info.valor, actual.info.termino))
-        actual = actual.sig
+    def imprime(self):
+        actual = self.termino_mayor
+        while(actual is not None):
+            print("{}X{}".format(actual.info.valor, actual.info.termino))
+            actual = actual.sig
 
-def restar(self, polinomio2):
-    aux = Polinomio()
-    mayor= self if (self.grado > polinomio2.grado) else polinomio2
-    for i in range(0, mayor.grado +1):
-        total = self.obtener_valor(i) - polinomio2.obtener_valor(i)
-        if (total != 0):
-            aux.agregar_termino(i, total)
-    return aux
+    def restar(self, polinomio2):
+        aux = Polinomio()
+        mayor= self if (self.grado > polinomio2.grado) else polinomio2
+        for i in range(0, mayor.grado +1):
+            total = self.obtener_valor(i) - polinomio2.obtener_valor(i)
+            if (total != 0):
+                aux.agregar_termino(i, total)
+        return aux
 
 A = Polinomio()
 A.agregar_termino(2,4)
@@ -78,5 +76,5 @@ C= A. restar(B)
 print("Completo")
 C.imprime()
 C.eliminar_termino(2)
-print("Eliinado")
+print("Eliminado")
 C.imprime()
