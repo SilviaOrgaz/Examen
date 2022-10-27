@@ -13,6 +13,16 @@ class Polinomio(object):
 
     def __init__(self):
         self.termino_mayor = None
-        self.grade = -1
+        self.grado = -1
     
+    def agregar_termino(self, termino, valor):
+        aux = Nodo()
+        dato = datoPolinomio(valor, termino)
+        aux.info = dato
+        if(termino > self.grado):
+            aux.sig = self.termino_mayor
+            self.termino_mayor = aux
+            self.grado = termino
+        else:
+            
     
