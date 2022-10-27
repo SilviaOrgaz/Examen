@@ -10,3 +10,12 @@ def imprimir_numero(lista):
             print (i)
 
 imprimir_numero(lista)
+
+def parar(lista):
+    for i in lista:
+        if i >= 300:
+            break
+        else:
+            print(i)
+
+parar(lista)
