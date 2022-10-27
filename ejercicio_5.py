@@ -19,10 +19,14 @@ class hash_tabla:
         hash = self.function_hash(valor)
         if self.tabla[hash] is None:
             self.tabla[hash] = valor
+    
+    def encriptar(self, cadena):
 
 
 alfabeto = [chr(i)for i in range(32, 125)]
 A= hash_tabla(len(alfabeto))
+
+cadena = input("Introduce una cadena: ")
 
 
         
