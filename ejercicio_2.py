@@ -16,6 +16,6 @@ def parar(lista):
         if i >= 300:
             break
         else:
-            print(i)
+            print (i)
 
 parar(lista)
