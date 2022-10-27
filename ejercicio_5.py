@@ -23,14 +23,24 @@ class hash_tabla:
     def encriptar(self, cadena):
         resultado =""
         for i in cadena:
-            resultado = resultado + str(self.tabla[ord(i)-33])
+            self.Insertar_elementos(i)
+            resultado = resultado + chr(self.funcion_hash(i)+33)
         return resultado
-
-
+    
+    def des_encriptar(self, cadena):
+        resultado = ""
+        for i in cadena:
+            resultado = resultado + str(self.tabla[ord(i)])
+        return resultado
+    
+    
 alfabeto = [chr(i)for i in range(32, 125)]
 A= hash_tabla(len(alfabeto))
 
 cadena = input("Introduce una cadena: ")
+cadena_encriptada = A.encriptar(cadena)
+print("Cadena encriptada: {}".format(cadena_encriptada))
+
 
 
         
