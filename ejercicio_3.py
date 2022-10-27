@@ -5,4 +5,8 @@ class Alumno:
 
     def __str__(self):
         return "El nombre del alumno es {} y su nota es de {}".format(self.nombre, self.nota)
-        
+
+    def calificacion(self):
+        if self.nota < 5:
+            print("El alumno {} ha suspendido con una nota de {}".format(self.nombre, self.nota))
+            
