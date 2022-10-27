@@ -21,6 +21,10 @@ class hash_tabla:
             self.tabla[hash] = valor
     
     def encriptar(self, cadena):
+        resultado =""
+        for i in cadena:
+            resultado = resultado + str(self.tabla[ord(i)-33])
+        return resultado
 
 
 alfabeto = [chr(i)for i in range(32, 125)]
